@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Register/Login";
+}
+<body>
+    <div>
+        <h1>Dashboard</h1>
+        <form action="Process" method="post">
+            What belt color: <input type="text" name="Color"><br>
+            Date belt chieved: <input type="date" name="DateAchieved"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <h4>My Belts</h4>
+        <hr>
+    </div>
+    <div>
+        <br>
+        <hr>
+        <h4>Belts Created</h4>
+@{
+    foreach(var x in ViewBag.AllBelts)
+    {
+        <p><a href="Display/@x.BeltId"> @x.Color</a></p>
+    }
+}
+    </div>
+</body>

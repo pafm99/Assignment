@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Display";
+}
+    <body>
+        <h1>@ViewBag.currBelt.Color</h1>
+
+        <p><b>Date: </b> @ViewBag.currBelt.CreatedAt.ToString("MMM dd yyyy")</p>
+        <p><b>Creator: </b>@ViewBag.currBelt.Student.Name</p>
+        <hr>
+
+        
+        <Form action="/Add" method="post">
+            Belt Category: <input type="text" name="BeltCategory"><br>
+            Date Achieved: <input type="date" name="DateAchieved"><br>
+            <input type="hidden" name="Id" value="@ViewBag.currBelt.BeltId">
+            <input type="submit" value="submit">
+        </Form>
+
+    </body>
